@@ -2710,12 +2710,13 @@
 
 	library.SettingsMenu = library.SettingsColumn1:AddSection"Menu"
 	library.SettingsMenu:AddBind({text = "Open / Close", flag = "UI Toggle", nomouse = true, key = "RightAlt", callback = function() library:Close() end})
-	library.SettingsMenu:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.fromRGB(177,59,255), callback = function(Color1)
+	library.SettingsMenu:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.fromRGB(177,59,255), callback = function(Color)
 		if library.currentTab then
-			library.currentTab.button.TextColor3 = Color1
+			library.currentTab.button.TextColor3 = Color
 		end
+        ColorNoty = Color
 		for _, obj in next, library.theme do
-			obj[(obj.ClassName == "TextLabel" and "TextColor3") or (obj.ClassName == "ImageLabel" and "ImageColor3") or "BackgroundColor3"] = Color1
+			obj[(obj.ClassName == "TextLabel" and "TextColor3") or (obj.ClassName == "ImageLabel" and "ImageColor3") or "BackgroundColor3"] = Color
 		end
 	end})
 	local Backgrounds = {
