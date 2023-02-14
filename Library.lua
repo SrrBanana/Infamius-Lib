@@ -2714,7 +2714,6 @@
 		if library.currentTab then
 			library.currentTab.button.TextColor3 = Color
 		end
-        ColorNoty = Color
 		for _, obj in next, library.theme do
 			obj[(obj.ClassName == "TextLabel" and "TextColor3") or (obj.ClassName == "ImageLabel" and "ImageColor3") or "BackgroundColor3"] = Color
 		end
